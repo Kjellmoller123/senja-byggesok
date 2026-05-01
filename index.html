@@ -7,377 +7,112 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --bg: #f4f2ee;
-    --bg2: #ffffff;
-    --border: #d8d5ce;
-    --text: #1a1917;
-    --text2: #6b6860;
-    --text3: #9e9b93;
-    --blue: #1a4f8a;
-    --blue-light: #e8f0f9;
-    --green: #1a6b3c;
-    --green-light: #e6f4ec;
-    --amber: #7a4f0d;
-    --amber-light: #fdf3e0;
-    --red: #8a1a1a;
-    --red-light: #fce8e8;
-    --accent: #2d5a9e;
+    --bg: #f4f2ee; --bg2: #ffffff; --border: #d8d5ce;
+    --text: #1a1917; --text2: #6b6860; --text3: #9e9b93;
+    --blue: #1a4f8a; --blue-light: #e8f0f9;
+    --green: #1a6b3c; --green-light: #e6f4ec;
+    --amber: #7a4f0d; --amber-light: #fdf3e0;
+    --red: #8a1a1a; --red-light: #fce8e8;
+    --accent: #2d5a9e; --purple: #4a2d8a; --purple-light: #eeebfc;
   }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  header {
-    background: var(--text);
-    color: #f4f2ee;
-    padding: 20px 32px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .logo-mark {
-    width: 36px;
-    height: 36px;
-    border: 2px solid #f4f2ee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    flex-shrink: 0;
-  }
-
-  header h1 {
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-  }
-
-  header span {
-    font-size: 13px;
-    color: #9e9b93;
-    margin-left: auto;
-    font-family: 'DM Mono', monospace;
-  }
-
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 32px 24px 64px;
-  }
-
-  .sokeboks {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    padding: 28px 28px 24px;
-    margin-bottom: 24px;
-  }
-
-  .sokeboks h2 {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text2);
-    margin-bottom: 16px;
-    font-family: 'DM Mono', monospace;
-  }
-
-  .input-rad {
-    display: flex;
-    gap: 10px;
-    align-items: flex-end;
-    flex-wrap: wrap;
-  }
-
-  .input-gruppe {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .input-gruppe label {
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text2);
-    font-family: 'DM Mono', monospace;
-  }
-
-  input[type="number"], input[type="text"] {
-    font-family: 'DM Mono', monospace;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 10px 14px;
-    border: 1px solid var(--border);
-    background: var(--bg);
-    color: var(--text);
-    outline: none;
-    width: 100%;
-    -moz-appearance: textfield;
-  }
-
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
-
-  input[type="number"]:focus, input[type="text"]:focus {
-    border-color: var(--accent);
-    background: #fff;
-  }
-
-  .inp-gnr { width: 90px; }
-  .inp-bnr { width: 90px; }
-  .inp-fnr { width: 90px; }
-  .inp-tiltakstype { width: 220px; }
-
-  .skille {
-    font-size: 20px;
-    color: var(--text3);
-    padding-bottom: 10px;
-    font-family: 'DM Mono', monospace;
-  }
-
-  button.hoved-knapp {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 11px 24px;
-    background: var(--text);
-    color: #f4f2ee;
-    border: none;
-    cursor: pointer;
-    letter-spacing: 0.02em;
-    transition: opacity 0.15s;
-    white-space: nowrap;
-  }
-
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 15px; line-height: 1.6; }
+  header { background: var(--text); color: #f4f2ee; padding: 20px 32px; display: flex; align-items: center; gap: 16px; }
+  .logo-mark { width: 36px; height: 36px; border: 2px solid #f4f2ee; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; flex-shrink: 0; }
+  header h1 { font-size: 15px; font-weight: 400; letter-spacing: 0.02em; }
+  header span { font-size: 13px; color: #9e9b93; margin-left: auto; font-family: 'DM Mono', monospace; }
+  .container { max-width: 860px; margin: 0 auto; padding: 32px 24px 64px; }
+  .sokeboks { background: var(--bg2); border: 1px solid var(--border); padding: 28px 28px 24px; margin-bottom: 24px; }
+  .sokeboks h2 { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text2); margin-bottom: 16px; font-family: 'DM Mono', monospace; }
+  .input-rad { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; }
+  .input-gruppe { display: flex; flex-direction: column; gap: 5px; }
+  .input-gruppe label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text2); font-family: 'DM Mono', monospace; }
+  input[type="number"], input[type="text"] { font-family: 'DM Mono', monospace; font-size: 16px; font-weight: 500; padding: 10px 14px; border: 1px solid var(--border); background: var(--bg); color: var(--text); outline: none; width: 100%; -moz-appearance: textfield; }
+  input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+  input[type="number"]:focus, input[type="text"]:focus { border-color: var(--accent); background: #fff; }
+  .inp-gnr, .inp-bnr, .inp-fnr { width: 90px; }
+  .inp-tiltakstype { width: 240px; }
+  .skille { font-size: 20px; color: var(--text3); padding-bottom: 10px; font-family: 'DM Mono', monospace; }
+  button.hoved-knapp { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; padding: 11px 24px; background: var(--text); color: #f4f2ee; border: none; cursor: pointer; transition: opacity 0.15s; white-space: nowrap; }
   button.hoved-knapp:hover { opacity: 0.85; }
   button.hoved-knapp:disabled { opacity: 0.5; cursor: not-allowed; }
-
-  .feilmelding {
-    display: none;
-    margin-top: 10px;
-    font-size: 13px;
-    color: var(--red);
-    font-family: 'DM Mono', monospace;
-  }
-
-  /* Laster */
-  #laster-seksjon {
-    display: none;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    padding: 24px 28px;
-    margin-bottom: 24px;
-  }
-
-  .laster-rad {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 7px 0;
-    font-size: 13px;
-    font-family: 'DM Mono', monospace;
-  }
-
-  .laster-prikk {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--border);
-    flex-shrink: 0;
-  }
+  .feilmelding { display: none; margin-top: 10px; font-size: 13px; color: var(--red); font-family: 'DM Mono', monospace; }
+  #laster-seksjon { display: none; background: var(--bg2); border: 1px solid var(--border); padding: 24px 28px; margin-bottom: 24px; }
+  .laster-rad { display: flex; align-items: center; gap: 12px; padding: 7px 0; font-size: 13px; font-family: 'DM Mono', monospace; }
+  .laster-prikk { width: 8px; height: 8px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
   .laster-prikk.aktiv { background: var(--accent); animation: puls 0.8s ease-in-out infinite; }
   .laster-prikk.ferdig { background: var(--green); }
   .laster-prikk.feil-prikk { background: var(--red); }
-
   @keyframes puls { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-  /* Resultat */
   #resultat-seksjon { display: none; }
-
-  .seksjon {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    margin-bottom: 16px;
-  }
-
-  .seksjon-hode {
-    padding: 14px 24px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .seksjon-hode h3 {
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text2);
-    font-family: 'DM Mono', monospace;
-  }
-
+  .seksjon { background: var(--bg2); border: 1px solid var(--border); margin-bottom: 16px; }
+  .seksjon-hode { padding: 14px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .seksjon-hode h3 { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text2); font-family: 'DM Mono', monospace; }
   .seksjon-innhold { padding: 20px 24px; }
-
-  .metrikk-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-
-  .metrikk {
-    background: var(--bg);
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-  }
-
-  .metrikk-etikett {
-    font-size: 10px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text3);
-    font-family: 'DM Mono', monospace;
-    margin-bottom: 5px;
-  }
-
-  .metrikk-verdi {
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'DM Mono', monospace;
-    color: var(--text);
-  }
-
+  .metrikk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .metrikk { background: var(--bg); padding: 14px 16px; border: 1px solid var(--border); }
+  .metrikk-etikett { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); font-family: 'DM Mono', monospace; margin-bottom: 5px; }
+  .metrikk-verdi { font-size: 18px; font-weight: 500; font-family: 'DM Mono', monospace; color: var(--text); }
   .info-tabell { width: 100%; border-collapse: collapse; }
   .info-tabell tr { border-bottom: 1px solid var(--border); }
   .info-tabell tr:last-child { border-bottom: none; }
   .info-tabell td { padding: 9px 0; font-size: 13px; vertical-align: top; }
   .info-tabell td:first-child { color: var(--text2); width: 42%; font-family: 'DM Mono', monospace; font-size: 12px; }
   .info-tabell td:last-child { font-weight: 500; }
-
-  .badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
-    font-family: 'DM Mono', monospace;
-    padding: 2px 8px;
-    border: 1px solid;
-  }
+  .badge { display: inline-block; font-size: 11px; font-weight: 500; font-family: 'DM Mono', monospace; padding: 2px 8px; border: 1px solid; }
   .badge-ok { color: var(--green); border-color: #9fcfb5; background: var(--green-light); }
   .badge-advarsel { color: var(--amber); border-color: #e8c87e; background: var(--amber-light); }
   .badge-feil { color: var(--red); border-color: #e8a0a0; background: var(--red-light); }
   .badge-info { color: var(--blue); border-color: #9bb8d9; background: var(--blue-light); }
   .badge-grå { color: var(--text2); border-color: var(--border); background: var(--bg); }
-
-  .plan-item {
-    border: 1px solid var(--border);
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    background: var(--bg);
-  }
-
+  .badge-ai { color: var(--purple); border-color: #b8aee8; background: var(--purple-light); }
+  .plan-item { border: 1px solid var(--border); padding: 14px 16px; margin-bottom: 10px; background: var(--bg); }
   .plan-navn { font-weight: 500; font-size: 14px; margin-bottom: 4px; }
   .plan-meta { font-size: 12px; color: var(--text2); font-family: 'DM Mono', monospace; }
-
-  .fare-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-  }
+  .fare-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); }
   .fare-item:last-child { border-bottom: none; }
   .fare-ikon { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
-  .fare-ok { background: var(--green); }
   .fare-advarsel { background: #e8a030; }
   .fare-ukjent { background: var(--border); }
   .fare-tekst-hoved { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
   .fare-tekst-sub { font-size: 12px; color: var(--text2); font-family: 'DM Mono', monospace; }
-
-  .lenke-rad {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid var(--border);
-  }
-
-  a.ekstern-lenke {
-    font-size: 12px;
-    font-family: 'DM Mono', monospace;
-    font-weight: 500;
-    padding: 6px 12px;
-    border: 1px solid var(--border);
-    color: var(--text);
-    text-decoration: none;
-    background: var(--bg);
-    transition: background 0.12s;
-  }
-
+  .lenke-rad { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  a.ekstern-lenke { font-size: 12px; font-family: 'DM Mono', monospace; font-weight: 500; padding: 6px 12px; border: 1px solid var(--border); color: var(--text); text-decoration: none; background: var(--bg); transition: background 0.12s; }
   a.ekstern-lenke:hover { background: var(--border); }
+  .info-boks { background: var(--blue-light); border: 1px solid #9bb8d9; padding: 12px 16px; font-size: 13px; color: var(--blue); margin-bottom: 16px; font-family: 'DM Mono', monospace; line-height: 1.5; }
 
-  .steg-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-  }
+  /* AI-analyse seksjon */
+  .ai-seksjon { background: var(--bg2); border: 1px solid #b8aee8; margin-bottom: 16px; }
+  .ai-hode { padding: 14px 24px; border-bottom: 1px solid #b8aee8; display: flex; align-items: center; justify-content: space-between; background: var(--purple-light); }
+  .ai-hode h3 { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--purple); font-family: 'DM Mono', monospace; }
+  .ai-innhold { padding: 24px; }
+  .ai-laster { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--text2); font-family: 'DM Mono', monospace; }
+  .ai-spinner { width: 16px; height: 16px; border: 2px solid #b8aee8; border-top-color: var(--purple); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
-  .steg-kort {
-    border: 1px solid var(--border);
-    padding: 16px;
-    cursor: pointer;
-    background: var(--bg);
-    transition: background 0.12s;
-    text-align: left;
-    width: 100%;
-    font-family: 'DM Sans', sans-serif;
-  }
+  .ai-resultat { display: none; }
+  .ai-kort { border: 1px solid var(--border); padding: 16px 18px; margin-bottom: 12px; background: var(--bg); }
+  .ai-kort-tittel { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text2); font-family: 'DM Mono', monospace; margin-bottom: 8px; }
+  .ai-kort-tekst { font-size: 14px; line-height: 1.7; color: var(--text); white-space: pre-wrap; }
 
+  .dispensasjon-boks { border: 1px solid; padding: 16px 18px; margin-bottom: 12px; }
+  .dispensasjon-ja { border-color: #e8c87e; background: var(--amber-light); }
+  .dispensasjon-nei { border-color: #9fcfb5; background: var(--green-light); }
+  .dispensasjon-ukjent { border-color: var(--border); background: var(--bg); }
+  .dispensasjon-tittel { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; font-family: 'DM Mono', monospace; margin-bottom: 6px; }
+  .dispensasjon-ja .dispensasjon-tittel { color: var(--amber); }
+  .dispensasjon-nei .dispensasjon-tittel { color: var(--green); }
+  .dispensasjon-tekst { font-size: 14px; line-height: 1.7; }
+
+  .steg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .steg-kort { border: 1px solid var(--border); padding: 16px; cursor: pointer; background: var(--bg); transition: background 0.12s; text-align: left; width: 100%; font-family: 'DM Sans', sans-serif; }
   .steg-kort:hover { background: var(--blue-light); border-color: #9bb8d9; }
   .steg-nr { font-size: 11px; color: var(--text3); font-family: 'DM Mono', monospace; margin-bottom: 6px; }
   .steg-tittel { font-size: 13px; font-weight: 500; color: var(--text); }
   .steg-sub { font-size: 12px; color: var(--text2); margin-top: 3px; }
 
-  .info-boks {
-    background: var(--blue-light);
-    border: 1px solid #9bb8d9;
-    padding: 12px 16px;
-    font-size: 13px;
-    color: var(--blue);
-    margin-bottom: 16px;
-    font-family: 'DM Mono', monospace;
-    line-height: 1.5;
-  }
-
-  footer {
-    text-align: center;
-    padding: 24px;
-    font-size: 11px;
-    color: var(--text3);
-    font-family: 'DM Mono', monospace;
-    border-top: 1px solid var(--border);
-    margin-top: 32px;
-  }
-
-  @media (max-width: 600px) {
-    .input-rad { flex-direction: column; }
-    .inp-gnr, .inp-bnr, .inp-fnr, .inp-tiltakstype { width: 100%; }
-    header span { display: none; }
-  }
+  footer { text-align: center; padding: 24px; font-size: 11px; color: var(--text3); font-family: 'DM Mono', monospace; border-top: 1px solid var(--border); margin-top: 32px; }
+  @media (max-width: 600px) { .input-rad { flex-direction: column; } .inp-gnr, .inp-bnr, .inp-fnr, .inp-tiltakstype { width: 100%; } header span { display: none; } }
 </style>
 </head>
 <body>
@@ -407,7 +142,7 @@
         <input class="inp-fnr" type="number" id="fnr" value="0" min="0" placeholder="0">
       </div>
       <div class="input-gruppe">
-        <label>Tiltakstype (valgfritt)</label>
+        <label>Tiltakstype</label>
         <input class="inp-tiltakstype" type="text" id="tiltakstype" placeholder="f.eks. Enebolig, Garasje...">
       </div>
       <button class="hoved-knapp" id="sok-knapp" onclick="sokEiendom()">Analyser eiendom</button>
@@ -418,8 +153,8 @@
   <div id="laster-seksjon">
     <div class="laster-rad"><div class="laster-prikk" id="p1"></div><span id="t1">Venter...</span></div>
     <div class="laster-rad"><div class="laster-prikk" id="p2"></div><span id="t2" style="color:var(--text3)">Reguleringsplaner (arealplaner.no)</span></div>
-    <div class="laster-rad"><div class="laster-prikk" id="p3"></div><span id="t3" style="color:var(--text3)">Faresonekart (NVE)</span></div>
-    <div class="laster-rad"><div class="laster-prikk" id="p4"></div><span id="t4" style="color:var(--text3)">Bygger rapport</span></div>
+    <div class="laster-rad"><div class="laster-prikk" id="p3"></div><span id="t3" style="color:var(--text3)">AI-analyse av planbestemmelser</span></div>
+    <div class="laster-rad"><div class="laster-prikk" id="p4"></div><span id="t4" style="color:var(--text3)">Faresonekart og rapport</span></div>
   </div>
 
   <div id="resultat-seksjon">
@@ -427,7 +162,7 @@
     <div class="seksjon">
       <div class="seksjon-hode">
         <h3>Eiendom</h3>
-        <span class="badge badge-ok" id="badge-status">Funnet</span>
+        <span class="badge badge-ok">Funnet</span>
       </div>
       <div class="seksjon-innhold">
         <div class="metrikk-grid">
@@ -442,11 +177,42 @@
           <tr><td>Tiltakstype oppgitt</td><td id="vis-tiltakstype">–</td></tr>
         </table>
         <div class="lenke-rad">
-          <a class="ekstern-lenke" id="lenke-kartverket" href="#" target="_blank">Eiendomsregisteret (Kartverket)</a>
+          <a class="ekstern-lenke" id="lenke-kartverket" href="#" target="_blank">Eiendomsregisteret</a>
           <a class="ekstern-lenke" id="lenke-kommunekart" href="#" target="_blank">Kommunekart</a>
           <a class="ekstern-lenke" id="lenke-arealplaner" href="#" target="_blank">Arealplaner.no</a>
           <a class="ekstern-lenke" id="lenke-nve" href="#" target="_blank">NVE Atlas</a>
-          <a class="ekstern-lenke" id="lenke-ngu" href="#" target="_blank">NGU kvikkleire</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI-ANALYSE -->
+    <div class="ai-seksjon">
+      <div class="ai-hode">
+        <h3>AI-analyse av reguleringsplan</h3>
+        <span class="badge badge-ai" id="ai-badge">Analyserer...</span>
+      </div>
+      <div class="ai-innhold">
+        <div class="ai-laster" id="ai-laster">
+          <div class="ai-spinner"></div>
+          <span id="ai-laster-tekst">Henter planbestemmelser og analyserer...</span>
+        </div>
+        <div class="ai-resultat" id="ai-resultat">
+          <div class="ai-kort">
+            <div class="ai-kort-tittel">Hva sier reguleringsplanen?</div>
+            <div class="ai-kort-tekst" id="ai-plan-tekst"></div>
+          </div>
+          <div class="ai-kort">
+            <div class="ai-kort-tittel">Hva kan du bygge her?</div>
+            <div class="ai-kort-tekst" id="ai-bygge-tekst"></div>
+          </div>
+          <div class="dispensasjon-boks" id="dispensasjon-boks">
+            <div class="dispensasjon-tittel" id="dispensasjon-tittel">Dispensasjonsvurdering</div>
+            <div class="dispensasjon-tekst" id="dispensasjon-tekst"></div>
+          </div>
+          <div class="ai-kort">
+            <div class="ai-kort-tittel">Anbefalte vedlegg til søknaden</div>
+            <div class="ai-kort-tekst" id="ai-vedlegg-tekst"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -474,43 +240,41 @@
     </div>
 
     <div class="seksjon">
-      <div class="seksjon-hode">
-        <h3>Neste steg i byggesøknaden</h3>
-      </div>
+      <div class="seksjon-hode"><h3>Neste steg</h3></div>
       <div class="seksjon-innhold">
         <div class="steg-grid">
-          <button class="steg-kort" onclick="åpneLenke('https://dibk.no/byggesok/')">
+          <button class="steg-kort" onclick="window.open('https://dibk.no/byggesok/','_blank')">
             <div class="steg-nr">01</div>
             <div class="steg-tittel">DIBK byggesøknad</div>
             <div class="steg-sub">Start søknad på dibk.no</div>
           </button>
-          <button class="steg-kort" onclick="åpneLenke('https://www.senja.kommune.no/tjenester/planer-bygg-og-eiendom/bygg/byggesak/')">
+          <button class="steg-kort" onclick="window.open('https://www.senja.kommune.no/tjenester/planer-bygg-og-eiendom/bygg/byggesak/','_blank')">
             <div class="steg-nr">02</div>
             <div class="steg-tittel">Senja byggesak</div>
             <div class="steg-sub">Kommunens byggesaksside</div>
           </button>
-          <button class="steg-kort" id="steg-nabo" onclick="åpneLenke('https://www.senja.kommune.no/')">
+          <button class="steg-kort" onclick="window.open('https://www.arealplaner.no/senja5530/arealplaner/search','_blank')">
             <div class="steg-nr">03</div>
-            <div class="steg-tittel">Nabovarsel</div>
-            <div class="steg-sub">Nabooversikt og varsling</div>
+            <div class="steg-tittel">Dispensasjonssøknad</div>
+            <div class="steg-sub">Sjekk behov og søk</div>
           </button>
-          <button class="steg-kort" onclick="åpneLenke('https://www.arealplaner.no/senja5530/arealplaner/search')">
+          <button class="steg-kort" onclick="window.open('https://atlas.nve.no/','_blank')">
             <div class="steg-nr">04</div>
-            <div class="steg-tittel">Dispensasjon</div>
-            <div class="steg-sub">Sjekk behov for dispensasjon</div>
+            <div class="steg-tittel">NVE Atlas</div>
+            <div class="steg-sub">Flom, skred, kvikkleire</div>
           </button>
         </div>
       </div>
     </div>
 
   </div>
-
 </div>
 
 <footer>
   Byggesøknad-assistent for Senja kommune (5530) &nbsp;|&nbsp;
-  Data fra Kartverket, arealplaner.no, NVE og NGU &nbsp;|&nbsp;
-  Prototyp — ikke juridisk rådgivning
+  Data fra Kartverket, arealplaner.no, NVE &nbsp;|&nbsp;
+  AI-analyse via Claude (Anthropic) &nbsp;|&nbsp;
+  Ikke juridisk rådgivning
 </footer>
 
 <script>
@@ -522,8 +286,6 @@ function setLaster(steg, status, tekst) {
   p.className = 'laster-prikk ' + (status === 'aktiv' ? 'aktiv' : status === 'ferdig' ? 'ferdig' : status === 'feil' ? 'feil-prikk' : '');
   if (tekst) { t.textContent = tekst; t.style.color = status === 'ferdig' ? 'var(--text)' : status === 'feil' ? 'var(--red)' : status === 'aktiv' ? 'var(--text)' : 'var(--text3)'; }
 }
-
-function åpneLenke(url) { window.open(url, '_blank'); }
 
 async function sokEiendom() {
   const gnr = document.getElementById('gnr').value.trim();
@@ -539,11 +301,14 @@ async function sokEiendom() {
   document.getElementById('sok-knapp').textContent = 'Henter data...';
   document.getElementById('resultat-seksjon').style.display = 'none';
   document.getElementById('laster-seksjon').style.display = 'block';
+  document.getElementById('ai-resultat').style.display = 'none';
+  document.getElementById('ai-laster').style.display = 'flex';
+  document.getElementById('ai-badge').textContent = 'Analyserer...';
 
   setLaster(1, 'aktiv', 'Adresse og eiendomsdata (Kartverket)...');
   setLaster(2, '', 'Reguleringsplaner (arealplaner.no)');
-  setLaster(3, '', 'Faresonekart (NVE)');
-  setLaster(4, '', 'Bygger rapport');
+  setLaster(3, '', 'AI-analyse av planbestemmelser');
+  setLaster(4, '', 'Faresonekart og rapport');
 
   try {
     const adresseUrl = `https://ws.geonorge.no/adresser/v1/sok?kommunenummer=${KOMMUNE_NR}&gardsnummer=${gnr}&bruksnummer=${bnr}&treffPerSide=3&asciiKompatibel=true`;
@@ -558,16 +323,15 @@ async function sokEiendom() {
       const planResp = await fetch(planUrl);
       if (planResp.ok) planData = await planResp.json();
     } catch {}
-    setLaster(2, planData ? 'ferdig' : 'feil', 'Reguleringsplaner (arealplaner.no)');
+    setLaster(2, 'ferdig', 'Reguleringsplaner (arealplaner.no)');
 
-    setLaster(3, 'aktiv', 'Faresonekart (NVE)...');
-    await new Promise(r => setTimeout(r, 400));
-    setLaster(3, 'ferdig', 'Faresonekart (NVE)');
+    setLaster(3, 'aktiv', 'AI-analyse av planbestemmelser...');
+    await kjørAIAnalyse(gnr, bnr, tiltakstype, adresseData, planData);
+    setLaster(3, 'ferdig', 'AI-analyse fullført');
 
-    setLaster(4, 'aktiv', 'Bygger rapport...');
-    await new Promise(r => setTimeout(r, 200));
-
-    visResultat(gnr, bnr, fnr, tiltakstype, adresseData, planData);
+    setLaster(4, 'aktiv', 'Faresonekart og rapport...');
+    await new Promise(r => setTimeout(r, 300));
+    visResultat(gnr, bnr, tiltakstype, adresseData, planData);
     setLaster(4, 'ferdig', 'Rapport klar');
 
     setTimeout(() => {
@@ -577,12 +341,113 @@ async function sokEiendom() {
 
   } catch (e) {
     feil.style.display = 'block';
-    feil.textContent = 'Nettverksfeil: ' + e.message;
+    feil.textContent = 'Feil: ' + e.message;
     document.getElementById('laster-seksjon').style.display = 'none';
   } finally {
     document.getElementById('sok-knapp').disabled = false;
     document.getElementById('sok-knapp').textContent = 'Analyser eiendom';
   }
+}
+
+async function kjørAIAnalyse(gnr, bnr, tiltakstype, adresseData, planData) {
+  const adresse = adresseData && adresseData.adresser && adresseData.adresser.length > 0
+    ? [adresseData.adresser[0].adressenavn, adresseData.adresser[0].nummer, adresseData.adresser[0].poststed].filter(Boolean).join(' ')
+    : `gnr ${gnr} / bnr ${bnr}`;
+
+  const planer = planData && (planData.arealplaner || planData.items || (Array.isArray(planData) ? planData : [])) || [];
+
+  const planTekst = planer.length > 0
+    ? planer.map(p => `- ${p.plannavn || p.navn || 'Ukjent'} (ID: ${p.planId || p.nasjonal_arealplan_id || '–'}, Status: ${p.planStatus || p.status || '–'}, Type: ${p.planType || p.type || '–'}${p.iKraft ? ', Ikraft: ' + p.iKraft : ''})`).join('\n')
+    : 'Ingen reguleringsplaner funnet i API. Kommuneplanen for Senja gjelder som grunnlag.';
+
+  const prompt = `Du er en norsk byggesaksekspert som hjelper arkitekter og rådgivere i Senja kommune (kommunenr. 5530).
+
+Eiendom: ${adresse}, gnr ${gnr} / bnr ${bnr}, Senja kommune
+${tiltakstype ? `Planlagt tiltak: ${tiltakstype}` : 'Tiltakstype: ikke oppgitt'}
+
+Reguleringsplaner registrert på eiendommen:
+${planTekst}
+
+Gi en strukturert analyse med følgende fire deler. Svar alltid på norsk, vær konkret og praktisk.
+
+DEL 1 - HVA SIER REGULERINGSPLANEN:
+Beskriv hva slags reguleringsformål som typisk gjelder, basert på plantype og planstatus. Nevn kommuneplanens arealdel for Senja som grunnlag hvis ingen detaljreguleringsplan er funnet.
+
+DEL 2 - HVA KAN DU BYGGE HER:
+Gi konkrete eksempler på hva som typisk er tillatt basert på plantype og beliggenhet i Senja kommune. Nevn vanlige krav som utnyttingsgrad (%-BYA), gesimshøyde, takvinkel og avstand til nabogrense.
+
+DEL 3 - DISPENSASJON JA/NEI:
+Start med enten "JA - dispensasjon kan være nødvendig" eller "NEI - dispensasjon trolig ikke nødvendig" eller "UKJENT - avhenger av tiltaket". Forklar kort hvorfor.
+
+DEL 4 - ANBEFALTE VEDLEGG:
+List opp de viktigste vedleggene til byggesøknaden (situasjonsplan, fasadetegninger osv.)
+
+Svar i dette formatet:
+###DEL1###
+[tekst]
+###DEL2###
+[tekst]
+###DEL3###
+[tekst]
+###DEL4###
+[tekst]`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    if (!response.ok) throw new Error('API-feil: ' + response.status);
+    const data = await response.json();
+    const tekst = data.content && data.content[0] && data.content[0].text ? data.content[0].text : '';
+
+    const del1 = hentDel(tekst, 'DEL1', 'DEL2');
+    const del2 = hentDel(tekst, 'DEL2', 'DEL3');
+    const del3 = hentDel(tekst, 'DEL3', 'DEL4');
+    const del4 = hentDel(tekst, 'DEL4', null);
+
+    document.getElementById('ai-plan-tekst').textContent = del1 || 'Ikke tilgjengelig.';
+    document.getElementById('ai-bygge-tekst').textContent = del2 || 'Ikke tilgjengelig.';
+    document.getElementById('ai-vedlegg-tekst').textContent = del4 || 'Ikke tilgjengelig.';
+
+    const dispBoks = document.getElementById('dispensasjon-boks');
+    const dispTittel = document.getElementById('dispensasjon-tittel');
+    const dispTekst = document.getElementById('dispensasjon-tekst');
+    dispTekst.textContent = del3 || 'Ikke vurdert.';
+
+    if (del3 && del3.toUpperCase().startsWith('JA')) {
+      dispBoks.className = 'dispensasjon-boks dispensasjon-ja';
+      dispTittel.textContent = 'Dispensasjon kan være nødvendig';
+    } else if (del3 && del3.toUpperCase().startsWith('NEI')) {
+      dispBoks.className = 'dispensasjon-boks dispensasjon-nei';
+      dispTittel.textContent = 'Dispensasjon trolig ikke nødvendig';
+    } else {
+      dispBoks.className = 'dispensasjon-boks dispensasjon-ukjent';
+      dispTittel.textContent = 'Dispensasjonsvurdering';
+    }
+
+    document.getElementById('ai-badge').textContent = 'Analyse klar';
+    document.getElementById('ai-laster').style.display = 'none';
+    document.getElementById('ai-resultat').style.display = 'block';
+
+  } catch (e) {
+    document.getElementById('ai-laster-tekst').textContent = 'AI-analyse ikke tilgjengelig: ' + e.message;
+    document.getElementById('ai-badge').textContent = 'Ikke tilgjengelig';
+  }
+}
+
+function hentDel(tekst, fra, til) {
+  const start = tekst.indexOf('###' + fra + '###');
+  if (start === -1) return null;
+  const innhold = tekst.substring(start + fra.length + 6);
+  const slutt = til ? innhold.indexOf('###' + til + '###') : -1;
+  return (slutt === -1 ? innhold : innhold.substring(0, slutt)).trim();
 }
 
 function visResultat(gnr, bnr, fnr, tiltakstype, adresseData, planData) {
@@ -596,8 +461,7 @@ function visResultat(gnr, bnr, fnr, tiltakstype, adresseData, planData) {
 
   if (adresseData && adresseData.adresser && adresseData.adresser.length > 0) {
     const a = adresseData.adresser[0];
-    const gatenavn = [a.adressenavn, a.nummer, a.bokstav].filter(Boolean).join(' ');
-    adresse = gatenavn || `Matrikkeladresse ${gnr}/${bnr}`;
+    adresse = [a.adressenavn, a.nummer, a.bokstav].filter(Boolean).join(' ') || `Matrikkeladresse ${gnr}/${bnr}`;
     poststed = [a.postnummer, a.poststed].filter(Boolean).join(' ') || '–';
     if (a.representasjonspunkt) {
       lon = a.representasjonspunkt.lon;
@@ -616,10 +480,7 @@ function visResultat(gnr, bnr, fnr, tiltakstype, adresseData, planData) {
   document.getElementById('lenke-kartverket').href = `https://eiendomsregisteret.kartverket.no/eiendom/${KOMMUNE_NR}-${gnr}/${bnr}`;
   document.getElementById('lenke-kommunekart').href = `https://kommunekart.com/?sok=${KOMMUNE_NR} ${gnr}/${bnr}`;
   document.getElementById('lenke-arealplaner').href = `https://www.arealplaner.no/senja${KOMMUNE_NR}/arealplaner/search?gardsnummer=${gnr}&bruksnummer=${bnr}`;
-  document.getElementById('lenke-nve').href = lon
-    ? `https://atlas.nve.no/Html5Viewer/index.html?viewer=nveatlas#${lon},${lat},13`
-    : 'https://atlas.nve.no/';
-  document.getElementById('lenke-ngu').href = 'https://www.ngu.no/tema/losmasser-og-skred';
+  document.getElementById('lenke-nve').href = lon ? `https://atlas.nve.no/Html5Viewer/index.html?viewer=nveatlas#${lon},${lat},13` : 'https://atlas.nve.no/';
 
   visPlaner(planData, gnr, bnr);
   visFaresoner(lon, lat);
@@ -629,15 +490,14 @@ function visPlaner(planData, gnr, bnr) {
   const el = document.getElementById('plan-liste');
   const badge = document.getElementById('badge-planer');
   const infoBoks = document.getElementById('plan-info-boks');
-
   const planer = planData && (planData.arealplaner || planData.items || (Array.isArray(planData) ? planData : null));
 
-  if (!planData || !planer || planer.length === 0) {
+  if (!planer || planer.length === 0) {
     badge.textContent = 'Åpne manuelt';
     badge.className = 'badge badge-grå';
     infoBoks.style.display = 'block';
-    infoBoks.innerHTML = `Plan-API er ikke direkte tilgjengelig. Trykk lenken under for å søke manuelt i arealplaner.no for gnr ${gnr} / bnr ${bnr} i Senja.`;
-    el.innerHTML = `<a class="ekstern-lenke" style="display:inline-block;margin-top:4px" href="https://www.arealplaner.no/senja5530/arealplaner/search?gardsnummer=${gnr}&bruksnummer=${bnr}" target="_blank">Søk i arealplaner.no</a>`;
+    infoBoks.textContent = `Plan-API ikke tilgjengelig direkte. Søk manuelt i arealplaner.no for gnr ${gnr} / bnr ${bnr}.`;
+    el.innerHTML = `<a class="ekstern-lenke" style="display:inline-block;margin-top:4px" href="https://www.arealplaner.no/senja${KOMMUNE_NR}/arealplaner/search?gardsnummer=${gnr}&bruksnummer=${bnr}" target="_blank">Søk i arealplaner.no</a>`;
     return;
   }
 
@@ -654,7 +514,7 @@ function visPlaner(planData, gnr, bnr) {
         <div class="plan-navn">${p.plannavn || p.navn || 'Ukjent plannavn'}</div>
         <span class="badge ${badgeKls}">${p.planStatus || p.status || '–'}</span>
       </div>
-      <div class="plan-meta">Plan-ID: ${planId} &nbsp;|&nbsp; Type: ${p.planType || p.type || '–'}${p.iKraft ? ' &nbsp;|&nbsp; Ikraft: ' + p.iKraft : ''}</div>
+      <div class="plan-meta">ID: ${planId} | Type: ${p.planType || p.type || '–'}${p.iKraft ? ' | Ikraft: ' + p.iKraft : ''}</div>
       ${planId !== '–' ? `<div style="margin-top:8px;"><a class="ekstern-lenke" href="https://www.arealplaner.no/senja${KOMMUNE_NR}/arealplaner/${planId}" target="_blank">Åpne plan</a></div>` : ''}
     </div>`;
   }).join('');
@@ -663,21 +523,17 @@ function visPlaner(planData, gnr, bnr) {
 function visFaresoner(lon, lat) {
   const el = document.getElementById('fare-liste');
   const infoBoks = document.getElementById('fare-info-boks');
-
-  if (lon && lat) {
-    infoBoks.textContent = `Koordinater funnet (${lon.toFixed(4)}, ${lat.toFixed(4)}). Faresoner må verifiseres i NVE Atlas — direkte API-kall krever serverside proxy.`;
-  } else {
-    infoBoks.textContent = 'Koordinater ikke funnet. Søk manuelt i NVE Atlas og NGU for faresonekart.';
-  }
-
+  infoBoks.textContent = lon
+    ? `Koordinater: (${lon.toFixed(4)}, ${lat.toFixed(4)}). Klikk NVE Atlas-lenken over for detaljerte faresonekart.`
+    : 'Koordinater ikke funnet. Søk manuelt i NVE Atlas.';
   el.innerHTML = [
-    { navn: 'Flom', sub: 'NVE flomsonekart — sjekk NVE Atlas', kls: 'fare-advarsel' },
-    { navn: 'Skred (snø, stein, jord)', sub: 'NVE aktsomhetskart for skred', kls: 'fare-advarsel' },
-    { navn: 'Kvikkleire', sub: 'NGU løsmassekart og aktsomhetskart', kls: 'fare-advarsel' },
-    { navn: 'Stormflo / havnivå', sub: 'Relevant for kysteiendommer i Senja', kls: 'fare-advarsel' },
-    { navn: 'Radon', sub: 'NGU radonkart — relevant for nybygg', kls: 'fare-ukjent' },
+    { navn: 'Flom', sub: 'NVE flomsonekart' },
+    { navn: 'Skred (snø, stein, jord)', sub: 'NVE aktsomhetskart' },
+    { navn: 'Kvikkleire', sub: 'NGU løsmassekart' },
+    { navn: 'Stormflo / havnivå', sub: 'Relevant for kysteiendommer i Senja' },
+    { navn: 'Radon', sub: 'NGU radonkart — relevant for nybygg' },
   ].map(f => `<div class="fare-item">
-    <div class="fare-ikon ${f.kls}"></div>
+    <div class="fare-ikon fare-advarsel"></div>
     <div><div class="fare-tekst-hoved">${f.navn}</div><div class="fare-tekst-sub">${f.sub}</div></div>
   </div>`).join('');
 }
