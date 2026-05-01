@@ -382,15 +382,19 @@ Start med enten "JA - dispensasjon kan være nødvendig" eller "NEI - dispensasj
 DEL 4 - ANBEFALTE VEDLEGG:
 List opp de viktigste vedleggene til byggesøknaden (situasjonsplan, fasadetegninger osv.)
 
-Svar i dette formatet:
-###DEL1###
-[tekst]
-###DEL2###
-[tekst]
-###DEL3###
-[tekst]
-###DEL4###
-[tekst]`;
+Svar ALLTID i nøyaktig dette formatet med disse nøkkelordene på egne linjer:
+
+SEKSJON_PLAN:
+[din tekst her]
+
+SEKSJON_BYGGE:
+[din tekst her]
+
+SEKSJON_DISPENSASJON:
+[din tekst her]
+
+SEKSJON_VEDLEGG:
+[din tekst her]`;
 
   try {
     const response = await fetch('/api/analyser', {
@@ -403,10 +407,11 @@ Svar i dette formatet:
     const data = await response.json();
     const tekst = data.content && data.content[0] && data.content[0].text ? data.content[0].text : '';
 
-    const del1 = hentDel(tekst, 'DEL1', 'DEL2');
-    const del2 = hentDel(tekst, 'DEL2', 'DEL3');
-    const del3 = hentDel(tekst, 'DEL3', 'DEL4');
-    const del4 = hentDel(tekst, 'DEL4', null);
+    console.log('AI svar:', tekst);
+    const del1 = hentSeksjon(tekst, 'SEKSJON_PLAN');
+    const del2 = hentSeksjon(tekst, 'SEKSJON_BYGGE');
+    const del3 = hentSeksjon(tekst, 'SEKSJON_DISPENSASJON');
+    const del4 = hentSeksjon(tekst, 'SEKSJON_VEDLEGG');
 
     document.getElementById('ai-plan-tekst').textContent = del1 || 'Ikke tilgjengelig.';
     document.getElementById('ai-bygge-tekst').textContent = del2 || 'Ikke tilgjengelig.';
@@ -436,6 +441,19 @@ Svar i dette formatet:
     document.getElementById('ai-laster-tekst').textContent = 'AI-analyse ikke tilgjengelig: ' + e.message;
     document.getElementById('ai-badge').textContent = 'Ikke tilgjengelig';
   }
+}
+
+function hentSeksjon(tekst, nøkkel) {
+  const idx = tekst.indexOf(nøkkel + ':');
+  if (idx === -1) return null;
+  const etter = tekst.substring(idx + nøkkel.length + 1);
+  const neste = etter.search(/\nSEKSJON_/);
+  return (neste === -1 ? etter : etter.substring(0, neste)).trim();
+}
+
+function hentDelAlt(tekst, indeks) {
+  const deler = tekst.split(/\n(?=DEL \d|##|\d\.|[A-ZÆØÅ]{3,}:)/);
+  return deler[indeks] ? deler[indeks].replace(/^[^\n]+\n/, '').trim() : null;
 }
 
 function hentDel(tekst, fra, til) {
